@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="web.dao.RuleMapper" >
+  <resultMap id="BaseResultMap" type="web.entity.Rule" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="object_type" property="objectType" jdbcType="TINYINT" />
+    <result column="label" property="label" jdbcType="VARCHAR" />
+    <result column="attr" property="attr" jdbcType="VARCHAR" />
+    <result column="deleted" property="deleted" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, object_type, label, attr, deleted
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from rule
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from rule
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="web.entity.Rule" >
+    insert into rule (id,name, object_type, label,
+      attr, deleted)
+    values (#{id},#{name,jdbcType=VARCHAR}, #{objectType,jdbcType=TINYINT}, #{label,jdbcType=VARCHAR},
+      #{attr,jdbcType=VARCHAR}, #{deleted,jdbcType=TINYINT})
+    <selectKey resultType="java.lang.Long" keyProperty="id" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+  </insert>
+  <insert id="insertSelective" parameterType="web.entity.Rule" >
+    insert into rule
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="objectType != null" >
+        object_type,
+      </if>
+      <if test="label != null" >
+        label,
+      </if>
+      <if test="attr != null" >
+        attr,
+      </if>
+      <if test="deleted != null" >
+        deleted,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="objectType != null" >
+        #{objectType,jdbcType=TINYINT},
+      </if>
+      <if test="label != null" >
+        #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="attr != null" >
+        #{attr,jdbcType=VARCHAR},
+      </if>
+      <if test="deleted != null" >
+        #{deleted,jdbcType=TINYINT},
+      </if>
+    </trim>
+    <selectKey resultType="java.lang.Long" keyProperty="id" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="web.entity.Rule" >
+    update rule
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="objectType != null" >
+        object_type = #{objectType,jdbcType=TINYINT},
+      </if>
+      <if test="label != null" >
+        label = #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="attr != null" >
+        attr = #{attr,jdbcType=VARCHAR},
+      </if>
+      <if test="deleted != null" >
+        deleted = #{deleted,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="web.entity.Rule" >
+    update rule
+    set name = #{name,jdbcType=VARCHAR},
+      object_type = #{objectType,jdbcType=TINYINT},
+      label = #{label,jdbcType=VARCHAR},
+      attr = #{attr,jdbcType=VARCHAR},
+      deleted = #{deleted,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectList" parameterType="web.entity.Rule" resultType="web.entity.Rule">
+      select
+      <include refid="Base_Column_List"/>
+      from rule where deleted = 0
+      <if test="id != null">
+          and id = #{id}
+      </if>
+      <if test="name != null">
+          and name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="objectType != null" >
+          and object_type = #{objectType,jdbcType=TINYINT}
+      </if>
+      <if test="label != null" >
+          and label = #{label,jdbcType=VARCHAR}
+      </if>
+      <if test="attr != null" >
+          and attr = #{attr,jdbcType=VARCHAR}
+      </if>
+      <if test="pagging == true">
+          limit #{startRow},#{pageSize}
+      </if>
+  </select>
+
+    <select id="selectCount" parameterType="web.entity.Rule" resultType="int">
+        select
+        COUNT(*)
+        from rule where deleted = 0
+        <if test="id != null">
+            and id = #{id}
+        </if>
+        <if test="name != null">
+            and name = #{name,jdbcType=VARCHAR}
+        </if>
+        <if test="objectType != null" >
+            and object_type = #{objectType,jdbcType=TINYINT}
+        </if>
+        <if test="label != null" >
+            and label = #{label,jdbcType=VARCHAR}
+        </if>
+        <if test="attr != null" >
+            and attr = #{attr,jdbcType=VARCHAR}
+        </if>
+    </select>
+</mapper>

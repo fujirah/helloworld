@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>设置收费</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../bootstrap/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+    <link href="../bootstrap/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+    <link href="../css/common.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+    </style>
+</head>
+<body>
+	<!-- 顶部菜单栏 -->
+   	<nav id="topList" name="feeDetail" class="navbar navbar-default" role="navigation"></nav>
+	<div class="main">
+		<div class="pay_left"></div>
+
+		<!-- 填写具体内容的地方 -->
+		<div class="content">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="input-group">
+						<span class="input-group-addon">创建时间</span>
+						<input type="text" class="form-control datetimepicker" placeholder="左边界" data-date-format="yyyy-mm-dd" data-link-format="yyyy-mm-dd">
+					</div>
+				</div>
+				<div class="col-md-4">
+				  <input type="text" class="form-control datetimepicker" placeholder="右边界" data-date-format="yyyy-mm-dd hh:ii">
+				</div>
+				<div class="col-md-4">
+					<select class="selectpicker" style="display: none;"
+					data-style="btn-primary">
+						<option>全部状态</option>
+						<option>hello</option>
+						<option>world</option>
+						<option>nohao</option>
+					</select>
+
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					  <div class="input-group">
+						  	<select class="selectpicker search-picker" style="display: none;" name="学生ID@学生姓名">
+								<option selected="true" value="1">学生ID</option>
+								<option value="2">学生姓名</option>
+							</select>
+						  <input type="text" class="form-control" placeholder="学生ID">
+					  </div>
+				</div>
+				<div class="col-md-4">
+					<div class="input-group">
+						  	<select class="selectpicker search-picker" style="display: none;" name="产品ID@产品名称">
+								<option selected="true" value="1">产品ID</option>
+								<option value="2">产品名称</option>
+							</select>
+						  <input type="text" class="form-control" placeholder="产品ID">
+					  </div>
+				</div>
+				<div class="col-md-4">
+					<button type="button" class="btn btn-default">Submit</button>
+				</div>
+			</div>
+
+			<div class="table-responsive maintable">
+			  <table class="table table-bordered">
+			  <thead>
+			  	<tr>
+			      <th class="danger"><input type="checkbox"></th>
+				  <th class="active">课程名称</th>
+				  <th class="success">类目</th>
+				  <th class="warning">创建时间</th>
+				  <th class="danger">是否收费</th>
+				  <th class="danger">需要支付</th>
+				  <th class="danger">操作</th>
+				  <th class="danger">查看</th>
+				</tr>
+			  </thead>
+			  <tbody>
+			  	<tr>
+			  		<td>on</td>
+			  		<td>yuwen</td>
+			  		<td>yuwen</td>
+			  		<td>yuwen</td>
+			  		<td>yuwenyuwenyuwen</td>
+			  		<td>yuwenyuwen</td>
+			  		<td>yuwenyuwen</td>
+			  		<td>yuwenyuwen</td>
+			  	</tr>
+			  </tbody>
+			  </table>
+			  <!-- 分页 -->
+			  <div class="pagePlu"><ul class="pagination"></ul></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript" src="../js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap-select.js"></script> 
+<script type="text/javascript" src="../bootstrap/js/bootstrap-datetimepicker.js"></script> 
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/detail.js"></script>
+</html>

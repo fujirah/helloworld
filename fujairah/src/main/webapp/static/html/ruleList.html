@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>类目收费列表</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../bootstrap/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+    <link href="../css/common.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+    </style>
+</head>
+<body>
+	<!-- 顶部菜单栏 -->
+    <nav id="topList" name="feeCourseList" class="navbar navbar-default" role="navigation"></nav>
+	<div class="main">
+		<!--左边菜单栏-->
+		<div class="pay_left"></div>
+		<!-- 填写具体内容的地方 -->
+		<div class="content">
+			<div class="row">
+			  <div class="col-md-4">
+				  <div class="input-group">
+					  <span class="input-group-addon">类目名称</span>
+					  <input type="text" class="form-control">
+				  </div>
+			  </div>
+			  <div class="col-md-4">
+				  <div class="input-group" style="padding-left:35%">
+					  <input type="button" class="btn btn-default" value="Submit">
+				  </div>
+			  </div>
+			  <div class="col-md-4">
+				  <div class="input-group" style="padding-left:33%">
+					  <input type="button" class="btn btn-danger" value="Add new"  data-toggle="modal" data-target="#myModal">
+				  </div>
+			  </div>
+			</div>
+			<div class="table-responsive maintable">
+			  <table class="table table-bordered">
+			  <thead class="table-holder">
+			  </thead>
+			  <tbody class="myTable">
+			  </tbody>
+			  </table>
+			  <!-- 分页 -->
+			  <div class="pagePlu"><ul class="pagination"></ul></div>
+			</div>
+		</div>
+	</div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="">
+                    </br>
+                    </br>
+                    <div class="input-group" style="width: 300px;">
+                        <span class="input-group-addon">名称</span>
+                        <input id="name" type="text" class="form-control" placeholder="">
+                    </div>
+                    </br>
+                    </br>
+                    <div class="input-group" style="width: 300px;">
+                        <span class="input-group-addon">标签</span>
+                        <input id="label" type="text" class="form-control" placeholder="">
+                    </div>
+                    </br>
+                    </br>
+                    <div class="input-group" style="width: 300px;">
+                        <span class="input-group-addon">属性</span>
+                        <input id="attr" type="text" class="form-control" placeholder="">
+                    </div>
+                    </br>
+                    </br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button id="addButton" type="button" class="btn btn-primary">add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="../js/jquery-2.1.0.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap-select.js"></script> 
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/catcher_left.js"></script>
+<script type="text/javascript" src="../js/ruleList.js"></script>
+
+<script type="text/javascript">
+</script>
+</html>

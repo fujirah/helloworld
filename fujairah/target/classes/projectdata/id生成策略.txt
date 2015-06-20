@@ -1,0 +1,17 @@
+DELIMITER //
+create function nextval(tableName varchar(50)) returns BIGINT   
+begin  
+declare _cur BIGINT;
+
+update idgenerator  
+ SET now_value = now_value+base_increace
+ where table_name = tableName;
+
+set _cur=(select now_value from idgenerator where table_name = tableName);
+return _cur;  
+end;  
+//
+
+
+
+调用方式：

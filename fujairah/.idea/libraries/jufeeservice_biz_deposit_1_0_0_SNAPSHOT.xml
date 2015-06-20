@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jufeeservice.biz.deposit-1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jufeeservice.biz.deposit-1.0.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jufeeservice.biz.deposit-1.0.0-SNAPSHOT.jar!/" recursive="false" />
+  </library>
+</component>

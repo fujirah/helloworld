@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--开启注解-->
+    <context:annotation-config/>
+
+    <!--公共组件-->
+    <import resource="classpath:common.xml"/>
+
+    <!--controller-->
+    <context:component-scan base-package="web.controller"/>
+
+    <!--manager-->
+    <context:component-scan base-package="web.manager"/>
+
+    <!--数据库相关-->
+    <import resource="classpath:datasource.xml"/>
+</beans>

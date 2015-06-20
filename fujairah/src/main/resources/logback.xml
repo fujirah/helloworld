@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<configuration debug="true">
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            </encoder>
+        </appender>
+
+        <appender name="FILE_ONE" class="ch.qos.logback.core.FileAppender">
+            <file>${fileLocation}</file>
+            <encoder>
+                <pattern>${logFormat}</pattern>
+            </encoder>
+        </appender>
+        <!--滚动打印-->
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <file>${fileLocation}</file>
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${fileDaily}</fileNamePattern>
+                <maxHistory>${max}</maxHistory>
+            </rollingPolicy>
+            <encoder>
+                <pattern>${logFormat}</pattern>
+            </encoder>
+        </appender>
+
+        <root level="debug">
+            <appender-ref ref="STDOUT" />
+            <appender-ref ref="FILE" />
+            <appender-ref ref="FILE_ONE"/>
+        </root>
+</configuration>
