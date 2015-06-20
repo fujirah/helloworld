@@ -40,7 +40,7 @@ public class SuduDancingCut {
         sd.computer(input);
         System.out.println("=======================");
         sd.computer(input1);
-        System.out.println("=======================");
+        System.out.println("=========================");
         sd.computer(input2);
     }
     class Node{
