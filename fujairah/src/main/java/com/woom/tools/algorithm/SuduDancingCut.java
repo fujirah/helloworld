@@ -111,7 +111,7 @@ public class SuduDancingCut {
         Node nextTop = head.right;
         Node find = nextTop;
         int min = 1000;
-        //找元素最少的列
+
         while(nextTop != head){
             if(min > nextTop.count){
                 min = nextTop.count;
@@ -124,7 +124,7 @@ public class SuduDancingCut {
         Node nextRow = nextTop.down;
         while(nextRow != nextTop){
             Node rowRight = nextRow.right;
-            //这行答案压入栈
+
             ans.push(nextRow);
             while(nextRow != rowRight){
                 removeClum(rowRight.topClum);
@@ -139,10 +139,10 @@ public class SuduDancingCut {
                 rollBack(rowLeft.topClum);
                 rowLeft = rowLeft.left;
             }
-            //不是这一行，弹出压入的答案
+
             ans.pop();
 
-            //继续往下搜寻
+
             nextRow = nextRow.down;
         }
         rollBack(nextTop);
@@ -165,7 +165,7 @@ public class SuduDancingCut {
         }
     }
 
-    //回溯
+
     public void rollBack(Node node){
         node.left.right = node;
         node.right.left = node;
@@ -181,7 +181,7 @@ public class SuduDancingCut {
             temp = temp.up;
         }
     }
-    //初始化
+
     public void init(String input){
         ans = new Stack();
         this.input = new int[81];
@@ -250,7 +250,7 @@ public class SuduDancingCut {
 
     }
 
-    //横向连接
+
     public void link4(boolean isFixed,int x,int y,int row,Integer value,Integer he,Integer... clumIndex){
         continer[row][he] = new Node();
         continer[row][he].value = value;
@@ -286,7 +286,7 @@ public class SuduDancingCut {
         temp.right = continer[row][he];
     }
 
-    //纵向连接
+
     public void linkUpOrDown(int row,int clum){
         for(int i = row - 1;i >= 0;i--){
             if(continer[i][clum] != null){

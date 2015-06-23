@@ -13,6 +13,7 @@ import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -34,7 +35,12 @@ public class FooTester extends TestCase {
 //        a.append("we23,");
 //        a.deleteCharAt(a.length()-1);
 //        System.out.println(a.toString());
-        System.out.println("\65533");
+//        System.out.println("\65533");
+        String attr = "{\"DEDUCT\":{\"exchangeCommFee\":157931,\"freeCommFee\":0,\"id\":3127050,\"shouldDeductFee\":0},\"REFUND\":{\"exchangeCommFee\":159237,\"freeCommFee\":0,\"id\":3127050,\"shouldDeductFee\":0}}";
+        Map<String,Object> rs1 = JsonUtil.json2Map(attr,Object.class);
+        SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd HH:ss:mm");
+        rs1.put("test1",s.format(new Date()));
+        System.out.println(JsonUtil.map2Json(rs1));
     }
     @Test
     public void testPriority(){
